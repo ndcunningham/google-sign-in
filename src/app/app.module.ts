@@ -10,10 +10,12 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { SupersecretComponent } from './supersecret/supersecret.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SupersecretComponent
   ],
   imports: [
     BrowserModule,

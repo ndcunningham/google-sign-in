@@ -38,17 +38,16 @@ users$: Observable<User>;
     return this.router.navigate(['/'])
   }
 
-  private updateUserData({uid, email, displayName, photoUrl}: User) {
-    // Sets user data to firestore on login
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${uid}`);
+  private updateUserData(user) {
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
 
-    const data = {
-      uid,
-      email,
-      displayName,
-      photoUrl
-    };
-    
-    return userRef.set(data, {merge: true});
+    const data = { 
+      uid: user.uid, 
+      email: user.email, 
+      displayName: user.displayName, 
+      photoURL: user.photoURL
+    } 
+
+    return userRef.set(data, { merge: true })
   }
 }
